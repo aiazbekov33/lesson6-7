@@ -34,6 +34,7 @@ public class LevelFragment extends Fragment implements LevelAdapter.ItemListener
     }
 
     public ArrayList<GameModel> getList() {
+
         ArrayList<GameModel> list = (ArrayList<GameModel>) getArguments().getSerializable("model");
         return list;
     }
@@ -51,6 +52,10 @@ public class LevelFragment extends Fragment implements LevelAdapter.ItemListener
         GameFragment fragment = new GameFragment();
         fragment.setArguments(bundle);
 
-        getParentFragmentManager().beginTransaction().replace(R.id.container_main, fragment).commit();
+        getParentFragmentManager()
+                .beginTransaction()
+                .replace(R.id.container_main, fragment).addToBackStack("")
+                .commit();
     }
+
 }

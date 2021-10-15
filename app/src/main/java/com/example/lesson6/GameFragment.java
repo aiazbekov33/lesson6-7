@@ -33,6 +33,7 @@ public class GameFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_game, container, false);
     }
 
@@ -56,9 +57,9 @@ public class GameFragment extends Fragment {
 
     private void checkAnswer() {
         if (editText.getText().toString().trim().equals(model.answer)){
-            Toast.makeText(requireContext(), "True", Toast.LENGTH_SHORT).show();
+            Toast.makeText(requireContext(), "Верно это " + model.answer, Toast.LENGTH_SHORT).show();
         }else {
-            Toast.makeText(requireContext(), "False", Toast.LENGTH_SHORT).show();
+            Toast.makeText(requireContext(), "Не верно попробуйте еще раз", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -84,4 +85,5 @@ public class GameFragment extends Fragment {
         model = (GameModel) getArguments().getSerializable("model");
 
     }
+
 }
